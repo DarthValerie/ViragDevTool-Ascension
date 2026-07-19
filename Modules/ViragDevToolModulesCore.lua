@@ -1,4 +1,5 @@
 local ViragDevTool = ViragDevTool
+print("|cff00ff00VDT Modules Core loaded|r")
 
 --TODO not implemented yet just an idea .Dont have time for this right now
 --- This class handles modules that can be registered in this addon.

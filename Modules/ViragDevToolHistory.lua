@@ -1,6 +1,6 @@
 local ViragDevTool = ViragDevTool
 
-
+print("|cff00ff00VDT History module loaded|r")
 -----------------------------------------------------------------------------------------------
 -- HISTORY
 -----------------------------------------------------------------------------------------------
@@ -26,13 +26,12 @@ function ViragDevTool:AddToHistory(strValue)
         end
 
         while #hist > maxSize do -- can have only 10 values in history
-        table.remove(hist, maxSize)
+            table.remove(hist, maxSize)
         end
 
         self:UpdateSideBarUI()
     end
 end
-
 
 function ViragDevTool:FindIn(parent, strName, fn)
     local resultTable = {}

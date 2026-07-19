@@ -1,18 +1,17 @@
-## Interface: 80000
-## Title: ViragDevTool
+## Interface: 30305
+## Title: ViragDevTool (Ascension)
 ## Author: Varren@Azuregos-RU
-## Version: 0.22
+## Version: 0.22-Ascension
 ## SavedVariables: ViragDevTool_Settings
-
+## Notes: Ported to Wrath 3.3.5 / Ascension
 
 ViragDevTool.lua
 
-Modules/ViragDevToolModulesCore.lua
-Modules/ViragDevToolEvents.lua
-Modules/ViragDevToolFunctionLogger.lua
-Modules/ViragDevToolHistory.lua
+Modules\ViragDevToolModulesCore.lua
+Modules\ViragDevToolEvents.lua
+Modules\ViragDevToolFunctionLogger.lua
+Modules\ViragDevToolHistory.lua
 
 ViragDevTool.xml
-
 ViragDevToolOptions.xml
 ViragDevToolOptions.lua

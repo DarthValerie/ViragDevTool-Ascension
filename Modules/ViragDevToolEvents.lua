@@ -1,11 +1,11 @@
 local ViragDevTool = ViragDevTool
-
+print("|cff00ff00ViragDevToolEvents.lua loaded|r")
 -----------------------------------------------------------------------------------------------
 -- EVENTS
 -----------------------------------------------------------------------------------------------
 function ViragDevTool:GetListenerFrame()
     if (self.listenerFrame == nil) then
-        self.listenerFrame = CreateFrame("Frame", "ViragDevToolListenerFrame", UIParent);
+        self.listenerFrame = CreateFrame("Frame", "ViragDevToolListenerFrame", UIParent)
     end
     return self.listenerFrame
 end
@@ -34,7 +34,9 @@ function ViragDevTool:StartMonitorEvent(event, unit)
 
     local eventName = event
     if unit then eventName = eventName .. " " .. tostring(unit) end
-    self:print(self.colors.green .. "Start" .. self.colors.white .. " event monitoring: " .. self.colors.lightblue .. eventName)
+    self:print(self.colors.green .. "Start"
+            .. self.colors.white .. " event monitoring: "
+            .. self.colors.lightblue .. eventName)
 end
 
 function ViragDevTool:StopMonitorEvent(event, unit)
@@ -44,7 +46,7 @@ function ViragDevTool:StopMonitorEvent(event, unit)
     if tEvent and tEvent.active then
         local f = self:GetListenerFrame()
         tEvent.active = false
-        if event == "ALL"  then
+        if event == "ALL" then
             f:UnregisterAllEvents()
             for _, tEvent in pairs(self.settings.events) do
                 if tEvent.active then
@@ -58,7 +60,9 @@ function ViragDevTool:StopMonitorEvent(event, unit)
         local eventName = event
         if unit then eventName = eventName .. " " .. tostring(unit) end
 
-        self:print(self.colors.red .. "Stop" .. self.colors.white .. " event monitoring: " .. self.colors.lightblue .. eventName)
+        self:print(self.colors.red .. "Stop"
+                .. self.colors.white .. " event monitoring: "
+                .. self.colors.lightblue .. eventName)
     end
 end
 
@@ -75,20 +79,19 @@ end
 function ViragDevTool:SetMonitorEventScript()
     local f = self:GetListenerFrame()
 
-    f:SetScript("OnEvent", function(this, ...)
+    f:SetScript("OnEvent", function (this, ...)
         local args = { ... }
         local event = args[1]
-		
-		local showAllEvents = ViragDevTool:GetMonitoredEvent("ALL")
+
+        local showAllEvents = ViragDevTool:GetMonitoredEvent("ALL")
         if ViragDevTool:GetMonitoredEvent(event) or (showAllEvents and showAllEvents.active) then
             if #args == 1 then args = args[1] end
             ViragDevTool:Add(args, date("%X") .. " " .. event)
         end
-    end);
+    end)
 end
 
 function ViragDevTool:GetMonitoredEvent(event, args)
-
     if self.settings == nil or self.settings.events == nil then return end
 
     local found
