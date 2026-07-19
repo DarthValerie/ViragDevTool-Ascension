@@ -1,7 +1,7 @@
 ## Interface: 30305
 ## Title: ViragDevTool (Ascension)
 ## Author: Varren Ported To 3.3.5 By DarthValerie
-## Version: 0.22-Ascension
+## Version: 1.1-Ascension
 ## SavedVariables: ViragDevTool_Settings
 ## Notes: Ported to Wrath 3.3.5 / Ascension
 
