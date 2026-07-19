@@ -773,6 +773,9 @@ function ViragDevTool:UIUpdateMainTableButton(node, info, id)
     node.nameButton:SetPoint("LEFT", node.rowNumberButton, "RIGHT", 10 * info.padding - 10, 0)
 
     node.valueButton:SetText(self:ToUIString(info.value, info.name, true))
+    -- Ascension/Wrath compatibility:
+    -- Wrath stretches the inherited count column across the row.
+    node.rowNumberButton:SetWidth(42)
     node.nameButton:SetText(tostring(info.name))
     node.rowNumberButton:SetText(tostring(id))
 
