@@ -1,4 +1,4 @@
-## Interface: 30305
+## Interface: 30300
 ## Title: ViragDevTool (Ascension)
 ## Author: Varren Ported To 3.3.5 By DarthValerie
 ## Version: 1.1-Ascension
